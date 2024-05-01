@@ -23,52 +23,47 @@ function Contact({setIsContact}) {
 
     function handleUserData(event) {
       const nameEvent = event.target.name
-      if(nameEvent=="user_email"&&event.target.value.match("[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$")!=null)
-        {
           setNewUserData((prev)=>{return ({...prev,[nameEvent]:event.target.value})})
-        }else if(nameEvent!="user_email")
-        {
-          setNewUserData((prev)=>{return ({...prev,[nameEvent]:event.target.value})})
-        }
-      
     }
-    
 
     const sendEmail = (e) => {
         e.preventDefault();
-        setToken(captchaRef.current.getValue());
-        
-        if(captchaRef.current.getValue()){
-          const ServiceID = `${import.meta.env.VITE_SERVICE_ID}`;
-          const templateID = `${import.meta.env.VITE_TEMPLATE_ID}`;
-          const publicKEY = `${import.meta.env.VITE_PUBLIC_KEY}`;
 
-          emailjs
-              .sendForm(ServiceID, templateID, form.current, {
-              publicKey: publicKEY,
-              })
-              .then(
-              () => {
-                  console.log("SUCCESS!");
-              },
-              (error) => {
-                  console.log("FAILED...", error.text);
-              }
-              );
+        if(newUserData.user_email.match("[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$")!=null){
+          setToken(captchaRef.current.getValue());
           
-          captchaRef.current.reset();
+          if(captchaRef.current.getValue()){
+            const ServiceID = `${import.meta.env.VITE_SERVICE_ID}`;
+            const templateID = `${import.meta.env.VITE_TEMPLATE_ID}`;
+            const publicKEY = `${import.meta.env.VITE_PUBLIC_KEY}`;
 
-          setNewUserData({
-            user_name: "",
-            user_email: "",
-            subject: "",
-            message: "",
-          });
+            emailjs
+                .sendForm(ServiceID, templateID, form.current, {
+                publicKey: publicKEY,
+                })
+                .then(
+                () => {
+                    console.log("SUCCESS!");
+                },
+                (error) => {
+                    console.log("FAILED...", error.text);
+                }
+                );
+            
+            captchaRef.current.reset();
 
-        }else{
-          setClassCaptcha(styles.captchaContainerNotMarked);
-          setToken(null);
-        }
+            setNewUserData({
+              user_name: "",
+              user_email: "",
+              subject: "",
+              message: "",
+            });
+
+          }else{
+            setClassCaptcha(styles.captchaContainerNotMarked);
+            setToken(null);
+          }
+      }
                
     };
     

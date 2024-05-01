@@ -3,6 +3,7 @@ import DarkText from './DarkText'
 import Boton from './Boton'
 import styles from '../styles/Intro.module.css'
 import MichellePhoto from '../assets/IMG_20240113_155413-2_HQ.png'
+import MichelleCV from '../files/Michelle_Caicedo_CV_Eng.pdf'
 
 function Intro({setIsContact}) {
 
@@ -39,7 +40,7 @@ function Intro({setIsContact}) {
         <DarkText text={text} className={styles.introTextSmall}/>
         <div className={styles.buttonCirclesContainer}>
             <Boton text={"Contact Me!"} className={styles.boton} callback={setIsContact}/>
-            <a href='../src/files/Michelle_Caicedo_CV_Eng.pdf' target='_blank'
+            <a href={MichelleCV} target='_blank'
                     rel='noopener noreferrer'><Boton text={"Download CV"} className={styles.boton}/></a>
         </div>  
     </div>

@@ -1,6 +1,7 @@
 import styles from '../styles/Footer.module.css'
 import GithubIcon from './GithubIcon'
 import LinkedInIcon from './LinkedInIcon'
+import MichelleCV from '../files/Michelle_Caicedo_CV_Eng.pdf'
 
 function Footer({setIsContact}) {
 
@@ -20,7 +21,7 @@ function Footer({setIsContact}) {
         <p onClick={()=>handleHome()}>Michelle Caicedo - MichelleDev.com</p>
         <p onClick={()=>handleAbout()}>About</p>
         <p onClick={setIsContact}>Contact</p>
-        <a href='../src/files/Michelle_Caicedo_CV_Eng.pdf' target='_blank'
+        <a href={MichelleCV} target='_blank'
                     rel='noopener noreferrer'>CV</a>
       </div> 
       <div className={styles.footerIcons}>
