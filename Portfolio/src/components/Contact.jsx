@@ -6,6 +6,8 @@ import Inputs from './Inputs'
 import TextMessage from './TextMessage'
 import emailjs from '@emailjs/browser';
 import  ReCAPTCHA  from "react-google-recaptcha"
+import EmailSent from './EmailSent'
+import Loading from './Loading'
 
 function Contact({setIsContact}) {
 
@@ -16,6 +18,9 @@ function Contact({setIsContact}) {
         message: "",
       })
     const [token,setToken] = useState(null)
+    const [emailSent, setEmailSent] = useState(false)
+    const [loading,setLoading] = useState(false)
+
     const [classCaptcha,setClassCaptcha] = useState(styles.captchaContainer)
         
     const form = useRef();
@@ -28,6 +33,8 @@ function Contact({setIsContact}) {
 
     const sendEmail = (e) => {
         e.preventDefault();
+
+        setLoading(true)
 
         if(newUserData.user_email.match("[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$")!=null){
           setToken(captchaRef.current.getValue());
@@ -43,7 +50,8 @@ function Contact({setIsContact}) {
                 })
                 .then(
                 () => {
-                    console.log("SUCCESS!");
+                  setLoading(false)
+                  setEmailSent(true)
                 },
                 (error) => {
                     console.log("FAILED...", error.text);
@@ -75,14 +83,16 @@ function Contact({setIsContact}) {
             <h3>Talk to Me!</h3>
             <Boton className={styles.closeButton} text={<CloseIcon/>} callback={()=>{setIsContact()}} isDisabled={false}/>
           </div>
-          <form onSubmit={sendEmail} ref={form}>
+          {(!emailSent&&!loading)&&<form onSubmit={sendEmail} ref={form}>
               <Inputs labelText={"Your Name:"} name={"user_name"} type="text" dataInput={newUserData.user_name} handler={handleUserData} placeholder=""/>
               <Inputs labelText={"Email:"} name={"user_email"} type="email" dataInput={newUserData.user_email} handler={handleUserData} placeholder="user@example.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"/>
               <Inputs labelText={"Mail Subject:"} name={"subject"} type="text" dataInput={newUserData.subject} handler={handleUserData}/>
               <TextMessage labelText={"Your message:"} name={"message"} type="text" dataInput={newUserData.message} handler={handleUserData}/>
               <div className={classCaptcha}><ReCAPTCHA sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY} ref={captchaRef} theme='dark' id='recaptcha'/></div>
               <Boton type="submit" className={styles.boton} text="Send" isDisabled={!newUserData.message||!newUserData.user_email}/>
-          </form>
+          </form>}
+          {(loading&&!emailSent)&&<Loading/>}
+          {(emailSent&&!loading)&& <EmailSent/>}
         </div>
     </section>
   )

@@ -44,7 +44,7 @@ function Projects() {
             contributions: 'Responsive and functional Navbar, notifications, cart, login and user sections. Explore page with infinite Scroll and API call. ',
             repository: 'https://github.com/RafaelCPC/MagicWeb',
             features: 'The importance of creating context and a visually attractive user interface are represented in this project. In MTG Masters you can explore all the products, add your favorite items to the cart, and open notifications.',
-            figma: 'https://www.figma.com/proto/f4tCStUGb46TcdV6y4jCgj/Dise%C3%B1o-Website?page-id=2%3A2&type=design&node-id=56-6&viewport=372%2C284%2C0.07&t=QC2CovydYPBLSnwr-1&scaling=scale-down&starting-point-node-id=56%3A6&mode=design'
+            figma: 'https://www.figma.com/file/f4tCStUGb46TcdV6y4jCgj/Dise%C3%B1o-Website?type=design&node-id=0%3A1&mode=design&t=E8cXyKLEuPee6DQ2-1'
             
         },
         {   
