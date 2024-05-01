@@ -48,9 +48,9 @@ function ProjectCard({objectData}) {
             <p>{`${objectData.status}`}</p>
             <p>{`${objectData.contributions}`}</p>
             <div className={styles.projectButtons}>
-                {objectData.url&&<Boton text={<a href={objectData.url} target='blank'>See it live!</a>} className={styles.boton}/>}
-                {objectData.repository&&<Boton text={<a href={objectData.repository} target='blank'>See Repository</a>} className={styles.boton}/>}
-                {objectData.figma&&<Boton text={<a href={objectData.figma} target='blank'>Go to Figma</a>} className={styles.boton}/>}
+                {objectData.url&&<a href={objectData.url} target='_blank'><Boton text='See it live!' className={styles.boton}/></a>}
+                {objectData.repository&&<a href={objectData.repository} target='_blank'><Boton text='See Repository' className={styles.boton}/></a>}
+                {objectData.figma&&<a href={objectData.figma} target='_blank'><Boton text='Go to Figma' className={styles.boton}/></a>}
             </div>
         </div>
         <div className={styles.projectImgCont}>
