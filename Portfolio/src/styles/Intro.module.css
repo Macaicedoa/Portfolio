@@ -1,0 +1,264 @@
+.sectionIntro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.intro{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .introTextContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    font-size: 32px;
+    font-weight: 700;
+    gap: 42px;
+  }
+  
+  .introText{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+  }
+
+  .introText p{
+    font-size: clamp(2.25rem, 1.3846rem + 2.7692vw, 4.5rem);
+    font-weight: 700;
+    color: #22f7cc;
+    text-align: start;
+  }
+  
+  .titleDark{
+    animation: appearText 1s ease-in;
+  }
+  
+  @keyframes appearText {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  
+  .titleDark::before{
+    content: "Welcome ";
+    color: var(--color-font-red);
+    text-shadow: 2px -2px 1px #fbf000;
+    -webkit-text-stroke: 1px #05020a;
+    
+  }
+  
+  .titleDark::after{
+    content: "Fullstack Web Developer";
+    color: var(--color-font-red);
+    text-shadow: 2px -2px 1px #f9f02b;
+    -webkit-text-stroke: 1px #05020a;
+  }
+  
+  .bottomText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .bottomText>p{
+    color:#22f7cc;
+    text-align: center;
+  }
+
+  .introTextSmall{
+    width: 60%;
+    font-size: clamp(1rem, 0.8558rem + 0.7692vw, 1.375rem);
+    font-weight: 200;
+    line-height: 25px;
+    text-wrap: wrap;
+    margin: 0 0; 
+    letter-spacing: .15rem;
+    align-self: center;
+    text-align: center;
+  }
+  
+
+  .buttonCirclesContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    gap: 24px;
+  }
+  
+  .boton{
+    display: inline-flex;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid var(--color-font-red);
+    background-color: #450c46;
+    transition: all 300ms ease;
+    height: fit-content;
+    align-self: center;
+    font-size: 16px;
+    transition: scale 150ms linear;
+    width: 160px;
+    justify-content: center;
+  }
+  
+  .boton:hover{
+    cursor: pointer;
+    font-weight: 600;
+    scale: 1.1;
+    background-color: var(--color-font-red);
+    color: var(--img-bg);/*#edd2b4;*/
+    box-shadow: 3px -3px 1px #fbf000;
+    border: 1px solid var(--img-bg);
+    transition: scale 150ms linear;
+  }
+  
+  .buttonCirclesContainer>svg{
+    width: 30%;
+  }
+  
+  .introPhotoContainer{
+    margin: 0 5%;
+    width: 30%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 350px;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(162 45 164 / 56%) 0%, #05010A 100%);
+    animation: appearText 1s ease-in;
+  }
+  
+  .introPhotoContainer>img{
+    height: 90%;
+    border-radius: 20px;
+  }
+  
+  .introPhotoContainer>svg:first-of-type{
+    position: absolute;
+    left: clamp(10px, -10rem + 20vw, 500px);
+    top: -5%;
+    animation: move1 1s linear;
+  }
+  @keyframes move1{
+    0%{
+      top: 10%;
+  
+    }
+    100%{
+      top: -5%;
+    }
+  }
+  
+  .introPhotoContainer>svg:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    left: -5%;
+    animation: move2 1s linear;
+  }
+  @keyframes move2{
+    0%{
+      left: 10%;
+  
+    }
+    100%{
+      left: -5%;
+    }
+  }
+  
+  .introPhotoContainer>svg:nth-of-type(3){
+    position: absolute;
+    right: clamp(10px, -10rem + 20vw, 500px);
+    bottom: -5%;
+    animation: move3 1s linear;
+  }
+  @keyframes move3{
+    0%{
+      bottom: 10%;
+  
+    }
+    100%{
+      bottom: -5%;
+    }
+  }
+  
+  .introPhotoContainer>svg:last-of-type{
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    animation: move4 1s linear;
+  }
+  @keyframes move4{
+    0%{
+      right: 10%;
+  
+    }
+    100%{
+      right: -5%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .intro {
+      flex-direction: column;
+      height: auto;
+    }
+    .introPhotoContainer{
+      width: clamp(0rem,30vh,100%);
+      margin: 0 auto 50px auto;
+      height: 350px;
+    }
+
+    .introTextContainer{
+      width: 100%;
+      padding: 0;
+    }
+    .introTextSmall{
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .introText p{
+      text-align: center;
+    }
+    .buttonCirclesContainer{
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .buttonCirclesContainer>svg{
+      position: absolute;
+      right: 0;
+    }
+    .boton{
+      align-self: center;
+    }
+  }
+
+  @media (max-width: 350px) {
+  .introPhotoContainer>img{
+    width: 200px;
+    height: auto;
+  }
+}
+

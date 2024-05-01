@@ -1,0 +1,292 @@
+.contactOverlay{
+    width: 100%;
+    height: calc(100vh - 300px);
+    padding: 150px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    background: #05020afa;
+}
+
+.contactContainer{
+    min-width: 650px;
+    max-width: 1000px;
+    padding: 24px 56px;
+    height: auto;
+    background: radial-gradient(circle, #450c46b9 10%, var(--img-bg) 11%);
+    background-size: 1em 1em;
+    background-color: transparent;
+    opacity: 1;
+    box-shadow: 0px 0px 100px 50px rgba(5,2,10,0.75) inset;
+    -webkit-box-shadow: 0px 0px 100px 50px rgba(5,2,10,0.75) inset;
+    -moz-box-shadow: 0px 0px 100px 50px rgba(5,2,10,0.75) inset;
+    border: 2px solid var(--color-font-red);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.contactContainer>div{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contactContainer>div>h3{
+    color: var(--color-font-red);
+    text-shadow: 1px -1px 1px #fbf000;
+    -webkit-text-stroke: 1px #05020a;
+    font-size: 48px;
+}
+
+.closeButton{
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+}
+
+.contactContainer>form{
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40px 40px 250px 100px;
+}
+
+.contactContainer>form>div{
+    margin: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contactContainer>form>div>input{
+    flex: 1 0 0;
+    width: 95%;
+}
+
+.contactContainer>form>div>label{
+    width: 100px;
+    text-align: start;
+    color: #22f7cc;
+    font-weight: 200;
+}
+
+.contactContainer>form>div:first-of-type{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.contactContainer>form>div:nth-of-type(2){
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.contactContainer>form>div:nth-of-type(3){
+    grid-column: 1 /3;
+    grid-row: 2;
+}
+.contactContainer>form>div:nth-of-type(4){
+    grid-column: 1 /3;
+    grid-row: 3;
+    align-items: flex-start;
+}
+
+.contactContainer>form>div:nth-of-type(4)>textarea{
+    height: 200px;
+    max-height: 250px;
+    text-align: start;
+    flex: 1 0 0;
+    background-color: var(--img-bg);
+    color: white;
+    border: 2px solid #5e105f;
+}
+
+.contactContainer>form input{
+    background-color: var(--img-bg);
+    color: white;
+    border: 2px solid #5e105f;
+}
+
+.boton{
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: flex-end;
+    margin: 8px 12px;
+    display: inline-flex;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    width: fit-content;
+    border: 1px solid var(--color-font-red);
+    background-color: #450c46;
+    transition: all 300ms ease;
+    height: fit-content;
+    align-self: flex-end;
+    font-size: clamp(1rem, 0.9038rem + 0.5128vw, 1.25rem);
+    transition: scale 150ms linear;
+}
+
+.boton:hover{
+    cursor: pointer;
+    font-weight: 600;
+    scale: 1.1;
+    background-color: var(--color-font-red);
+    color: var(--img-bg);/*#edd2b4;*/
+    box-shadow: 3px -3px 1px #fbf000;
+    border: 1px solid var(--img-bg);
+    transition: scale 150ms linear;
+}
+
+.boton:hover:disabled{
+    border: 1px solid var(--color-font-red);
+    background-color: #450c46;
+    scale: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    color: white;
+    font-weight: 400;
+}
+
+.captchaContainer{
+    grid-column: 1;
+    grid-row: 4;
+    width: fit-content;
+    height: fit-content;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+
+@media (max-width: 900px) {
+    .contactContainer{
+        padding: 24px 24px;
+        min-width: 500px;
+    }
+
+    .captchaContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+
+    .contactContainer>form>div{
+        margin: unset;
+    }
+    .contactContainer>form{
+        column-gap: 12px;
+        padding: unset;
+        grid-template-columns: calc(50% - 6px) calc(50% - 6px);
+    }
+
+    .contactContainer>form>div>label{
+        min-width: 100px;
+    }
+    .contactContainer>form>div:nth-of-type(2)>label{
+        width: auto;
+        min-width: auto;
+    }
+    
+}
+
+
+
+
+
+
+@media (max-width: 750px) {
+    .contactContainer{
+        padding: 24px 12px;
+        min-width: calc(100% - 96px);
+    }
+    .contactContainer>div>h3{
+        font-size: 36px;
+    }
+    .contactContainer>form{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .contactContainer>form>div>label{
+        width: 100px;
+        min-width: 100px;
+    }
+    .contactContainer>form>div:nth-of-type(2)>label{
+        width: 100px;
+        min-width: 100px;
+    }
+    .boton{
+        margin: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .contactContainer>form>div{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    .contactContainer>form>div>input{
+        width: 100%;
+    }
+    .contactContainer>form>div:nth-of-type(4)>textarea{
+        max-height: 150px;
+        width: 100%;
+        flex: unset;
+    }
+    .captchaContainer {
+        align-self: flex-start;
+    }
+
+}
+
+@media (max-height: 800px) {
+    .contactOverlay{
+        margin: 50px 0;
+        height: calc(100vh - 0px);
+        padding: 0px 0 0 0;
+    }
+    .contactContainer{
+        gap: 12px
+    }
+    .contactContainer>form{
+        row-gap: 12px;
+        grid-template-rows:unset; 
+    }
+    .contactContainer>form>div:nth-of-type(4)>textarea{
+        max-height: 100px;
+    }
+}
+
+@media (max-height: 700px) {
+    .contactOverlay{
+        margin: 0;
+        margin-top: 50px;
+    }
+    .contactContainer{
+        padding: 12px;
+    }
+    .contactContainer>form>div:nth-of-type(4)>textarea {
+        max-height: 90px;
+    }
+    .contactContainer>form{
+        row-gap: 6px;
+    }
+}
+
+@media (max-height: 400px) {
+    .contactContainer{
+        padding: 24px 12px;
+        min-width: calc(100% - 96px);
+    }
+    
+
+}

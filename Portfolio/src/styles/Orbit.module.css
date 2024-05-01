@@ -1,0 +1,57 @@
+  .cont{
+    margin:auto;
+    position: relative;
+    height:200px;
+    width:200px;
+  }
+  .small{
+    position: absolute;
+    top:45%;
+    height:50px;
+    width:50px;
+    border-radius:100%;
+    background: #f7d922;
+    animation: orbit infinite ease-in-out 6s;
+  }
+  .big{
+    position: absolute;
+    background-color: #F450F7;
+    backdrop-filter: blur( 5px );
+    height:100px;
+    width:100px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 100%;
+    z-index:2;
+  }
+  @keyframes orbit{
+    0%{
+      left:0%;
+      z-index:1;
+      scale:0.7;
+      transform:translate(0%,-50%);
+    }
+    25%{
+      scale:0.3;
+      transform:translate(-100%,-50%);
+    }
+    50%{
+      left:100%;
+      z-index:1;
+      
+    }
+    50.001%{
+      z-index:3;
+      
+    }
+    75%{
+      scale:1;
+    }
+    100%{
+      left:0%;
+      transform:translate(0%,-50%);
+      z-index:3;
+      scale:0.72; 
+    }
+  }

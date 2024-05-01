@@ -1,0 +1,237 @@
+.cardTitle{
+    grid-column: 1/3;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #6a346b;
+}
+
+.cardTitle>svg{
+    min-width: 12px;
+    height: 12px;
+    fill: #fbf000;   
+}
+
+.cardTitle>h2,.cardTitle>h3{
+    color: #22f7cc;
+    margin: 12px 24px;
+}
+
+.projectInfoMain{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 24px 24px;
+}
+
+.projectInfoMain>p{
+    font-size: clamp(1rem, 0.5rem + 1vw, 1.25rem);
+}
+
+.projectInfoMain>p:first-of-type{
+    text-align: start;
+}
+
+.projectInfoMain>p:nth-of-type(n+1)::before{
+    color: #22f7cc;
+    font-weight: 200;
+}
+.projectInfoMain>p:nth-of-type(2)::before{
+    content: "Tools: ";
+}
+.projectInfoMain>p:nth-of-type(3)::before{
+    content: "Status: ";
+}
+.projectInfoMain>p:nth-of-type(4)::before{
+    content: "Contributions: ";
+}
+
+.projectButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.projectButtons a{
+    text-decoration: none;
+}
+
+.boton{
+    display: inline-flex;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    width: 160px;
+    border: 1px solid var(--color-font-red);
+    background-color: #450c46;
+    transition: all 300ms ease;
+    height: fit-content;
+    align-self: flex-end;
+    font-size: 16px;
+    transition: scale 150ms linear;
+    justify-content: center;
+}
+
+.boton:hover{
+    cursor: pointer;
+    font-weight: 600;
+    scale: 1.1;
+    background-color: var(--color-font-red);
+    color: var(--img-bg);/*#edd2b4;*/
+    box-shadow: 3px -3px 1px #fbf000;
+    border: 1px solid var(--img-bg);
+    transition: scale 150ms linear;
+}
+
+.projectImgCont{
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.projectImg{
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.projectImg>img{
+    max-width: 100%;
+    position: absolute;
+}
+
+.SlideVisible{
+    opacity: 1;
+    transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.SlideHidden{
+    opacity: 0;
+    transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.Prev, .Next{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transition: color 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.Prev:hover, .Next:hover{
+    cursor: pointer;
+    scale: 1.2;
+}
+
+.PrevHidden, .NextHidden{
+    background-color: transparent;
+    width: 32px;
+    border: none;
+    transition: color 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+.PrevHidden>svg, .NextHidden>svg{
+    opacity: 0;
+}
+
+.Prev>svg, .Next>svg{
+    width: 32px;
+}
+
+@media (max-width: 1190px) {
+    .projectImg{
+        width: 450px;
+    }
+}
+
+@media (max-width: 950px) {
+    
+    .projectInfoMain{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .projectImgCont{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .projectImg{
+        min-width: 600px;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .projectImg{
+        min-width: 510px;
+        height: auto;
+    }
+}
+
+@media (max-width: 712px) {
+    .projectImg{
+        min-width:65%;
+    }
+}
+
+@media (max-width: 550px) {
+    .projectImg{
+        max-width:85%;
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        justify-content: unset;
+        margin-bottom: 24px;
+    }
+    .projectImg::-webkit-scrollbar {
+        width: 10px;
+        height: 8px;
+      }
+    .projectImg::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px #3a284d; 
+        border-radius: 5px;
+    }
+    .projectImg::-webkit-scrollbar-thumb {
+        background: #450c46; 
+        border-radius: 5px;
+      }
+
+    .projectImg>img{
+        position: relative;
+        margin: 24px 0;
+    }
+    .Prev, .Next, .PrevHidden, .NextHidden{
+        display: none;
+    }
+    .SlideHidden{
+        opacity: 1;
+    }
+    .cardTitle{
+        justify-content: center;
+    }
+   .cardTitle>h3{
+        margin: 8px 12px;
+        text-align: center;
+   }
+}
+
+@media (max-width: 350px) {
+    .cardTitle{
+        flex-direction: column;
+    }
+    .cardTitle>h3:nth-of-type(2){
+        font-weight: 200;
+    }
+}

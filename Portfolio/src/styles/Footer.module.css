@@ -1,0 +1,120 @@
+.footer{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid #6a346b;
+    padding: 24px 0;
+}
+
+.footerInfo{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    color: #450c46;
+    font-size: 16px;
+}
+
+.footerInfo>p:first-of-type{
+    text-decoration: none;
+    font-size: 16px;
+    flex: 1 0 0;
+    color: var(--color-font-red);
+}
+
+.footerInfo>a{
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--color-font-red);
+}
+
+.footerInfo>p{
+    color: var(--color-font-red);
+    font-size: 16px;
+}
+
+.footerInfo>a:hover,.footerInfo>p:hover{
+    color: #ee8bf0;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+}
+
+.footerIcons {
+    display: flex;
+    flex-direction: row;
+    padding: 0 24px;
+    gap: 12px;
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.footerIcons svg{
+    width: 36px;
+    height: 36px;
+    fill:#F450F7;
+    transition: all 150ms ease-in;
+}
+
+.footerIcons svg:hover{
+    scale: 1.1;
+    fill: #ee8bf0;
+}
+
+@media (max-width: 900px) {
+    .footerInfo{
+        width: 80%;
+    }
+    .footerIcons {
+        width: 20%;
+    }
+}
+
+@media (max-width: 700px) {
+    .footerInfo{
+        width: 50%;
+    }
+    .footerInfo>p:first-of-type{
+        display: none;
+    }
+    .footerIcons {
+        width: 50%;
+    }
+}
+
+@media (max-width: 550px) {
+    .footerInfo{
+        width: 70%;
+        padding: 0 12px;
+    }
+    .footerIcons {
+        width: 30%;
+        padding: 0 12px;
+    }
+    .footerIcons svg{
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    .footerInfo{
+        gap: 12px;
+    }
+    .footerIcons {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 300px) {
+    .footerInfo{
+        padding-right: 0px;
+    }
+}
