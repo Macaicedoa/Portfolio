@@ -26,19 +26,19 @@ function Skills() {
     const skillsInfo = [
         {
             title:"Languages",
-            text: [<img key='js' src={`${js}`}/>,<img key='php' src={`${php}`}/>,<img key='html' src={`${html}`}/>,<img key='css' src={`${css}`}/>,<img key='sass' src={`${sass}`}/>,<img key='python' src={`${python}`}/>]
+            text: [<img key='js' alt='js icon' src={`${js}`}/>,<img key='php' alt='php icon' src={`${php}`}/>,<img key='html' alt='html icon' src={`${html}`}/>,<img alt='css icon' key='css' src={`${css}`}/>,<img alt='sass icon' key='sass' src={`${sass}`}/>]
         },
         {
             title:"Frameworks & libraries",
-            text: [<img key='react' src={`${react}`}/>,<img key='vite' src={`${vite}`}/>,<img key='express' src={`${express}`}/>,<img key='node' src={`${node}`}/>,<img key='jquery' src={`${jquery}`}/>]
+            text: [<img key='react' alt='react icon' src={`${react}`}/>,<img alt='vite icon' key='vite' src={`${vite}`}/>,<img alt='express icon' key='express' src={`${express}`}/>,<img alt='node icon' key='node' src={`${node}`}/>,<img key='jquery' alt='jquery icon' src={`${jquery}`}/>]
         },
         {
             title:"Tools",
-            text: [<img key='vscode' src={`${vscode}`}/>,<img key='figma' src={`${figma}`}/>,<img key='git' src={`${git}`}/>,<img key='github' src={`${github}`}/>]
+            text: [<img key='vscode' alt='vscode icon' src={`${vscode}`}/>,<img key='figma' alt='figma icon' src={`${figma}`}/>,<img key='git' alt='git icon' src={`${git}`}/>,<img key='github' alt='github icon' src={`${github}`}/>]
         },
         {
             title:"Databases",
-            text: [<img key='postgresql' src={`${postgresql}`}/>]
+            text: [<img key='postgresql' alt='postgresql icon' src={`${postgresql}`}/>]
         }
     ];
 
